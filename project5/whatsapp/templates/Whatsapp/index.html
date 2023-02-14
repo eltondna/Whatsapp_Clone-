@@ -1,0 +1,36 @@
+{% extends 'Whatsapp/layout.html' %}
+{% load static %}
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-5" id="contact">
+            
+            <h4 id="login_user">{{ user.username }} </h4>
+            <!-- Search bar-->
+            <div class="input-group">
+                <input id="search_contact" type="text" class="form-control rounded" placeholder="Search or start new chat" aria-label="Search" aria-describedby="search-addon" />                
+                <button id="search_btn" type="submit" class="btn btn-outline-primary">Search</button>
+            </div>
+                
+            <h3 style="margin-top: 50px;">Current Contact  &#128483 </h3>
+            <br>
+            <div id="current_chat">
+            </div>
+            <div id="search_chat">
+            </div>
+        </div>
+        <div class="col-7" id="chat">
+            <div id="message_header"></div>
+            <div id="message_box"></div>
+        </div>
+        
+    </div>
+    <button id="logout"><a href="{% url 'logout' %}" style="color: rgb(45, 123, 157);">Logout</a></button>
+</div>
+
+
+
+    
+{% endblock %}
